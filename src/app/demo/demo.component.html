@@ -173,16 +173,44 @@
         <hr />
       </div>
 
+      <div class="font-weight-bold mb-1">Install Npm package</div>
+      
+      <textarea highlight-js [options]="{}" [lang]="'npm'">
+        npm i ngx-all-in-one-alerts
+      </textarea>
+
       <div class="font-weight-bold mb-1">HTML</div>
 
       <textarea highlight-js [options]="{}" [lang]="'html'">
-<app-ngx-all-in-one-alerts 
-    [showModal]="showMessage" 
-    [msgConfig]="alertConfiguration"
-    (modalChangeStatus)="modalChangeStatus($event)"
-></app-ngx-all-in-one-alerts>
+<ngx-all-in-one-alerts 
+[showModal]="showMessage" 
+[msgConfig]="alertConfiguration"
+(modalChangeStatus)="modalChangeStatus($event)"
+></ngx-all-in-one-alerts>
 </textarea
       >
+
+      <div class="font-weight-bold mb-1">import </div>
+      
+      <textarea highlight-js [options]="{}" [lang]="'npm'">
+              npm i ngx-all-in-one-alerts
+            </textarea>
+      
+      <div class="font-weight-bold mb-1">Import to app module</div>
+      
+      <textarea highlight-js [options]="{}" [lang]="'typescript'">
+import { NgModule } from '@angular/core';
+import { NgxAllInOneAlertsModule } from 'ngx-all-in-one-alerts';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [NgxAllInOneAlertsModule],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+      </textarea>
+
 
       <div class="font-weight-bold mb-1">Typescript</div>
 
