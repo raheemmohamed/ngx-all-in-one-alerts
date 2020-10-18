@@ -179,26 +179,9 @@
         npm i ngx-all-in-one-alerts
       </textarea>
 
-      <div class="font-weight-bold mb-1">HTML</div>
-
-      <textarea highlight-js [options]="{}" [lang]="'html'">
-<ngx-all-in-one-alerts 
-[showModal]="showMessage" 
-[msgConfig]="alertConfiguration"
-(modalChangeStatus)="modalChangeStatus($event)"
-></ngx-all-in-one-alerts>
-</textarea
-      >
-
-      <div class="font-weight-bold mb-1">import </div>
-      
-      <textarea highlight-js [options]="{}" [lang]="'npm'">
-              npm i ngx-all-in-one-alerts
-            </textarea>
-      
-      <div class="font-weight-bold mb-1">Import to app module</div>
-      
-      <textarea highlight-js [options]="{}" [lang]="'typescript'">
+        <div class="font-weight-bold mb-1">Import to app module</div>
+        
+<textarea highlight-js [options]="{}" [lang]="'typescript'">
 import { NgModule } from '@angular/core';
 import { NgxAllInOneAlertsModule } from 'ngx-all-in-one-alerts';
 
@@ -209,8 +192,20 @@ import { NgxAllInOneAlertsModule } from 'ngx-all-in-one-alerts';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-      </textarea>
+</textarea>
 
+
+      <div class="font-weight-bold mb-1">HTML</div>
+
+      <textarea highlight-js [options]="{}" [lang]="'html'">
+<ngx-all-in-one-alerts 
+[showModal]="showMessage" 
+[msgConfig]="alertConfiguration"
+(modalChangeStatus)="modalChangeStatus($event)"
+></ngx-all-in-one-alerts>
+</textarea
+      >
+      
 
       <div class="font-weight-bold mb-1">Typescript</div>
 

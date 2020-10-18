@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Demo
 
-[click here](https://raheemmohamed.github.io/ngx-all-in-one-alerts/demo)
+[click here](https://raheemmohamed.github.io/ngx-all-in-one-alerts)
 
 ## Development server
 
