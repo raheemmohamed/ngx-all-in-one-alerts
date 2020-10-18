@@ -1,0 +1,66 @@
+<ng-container *ngIf="showModal">
+  <div
+    class="ngx-alert alert-default"
+    [ngClass]="{
+      'fade show': showModal,
+      'alert-warning': msgConfig.alertType == 'warning',
+      'alert-success': msgConfig.alertType == 'success',
+      'alert-info': msgConfig.alertType == 'info',
+      'alert-danger': msgConfig.alertType == 'danger',
+      'alert-default': msgConfig.alertType == 'default'
+    }"
+  >
+    <div class="d-flex">
+      <div class="mr-2" *ngIf="msgConfig.statusIcon">
+        <span>
+          <ng-container [ngSwitch]="msgConfig.alertType">
+            <ng-container *ngSwitchCase="'success'">
+              <fa-icon [icon]="faCheckCircle"></fa-icon>
+            </ng-container>
+            <ng-container *ngSwitchCase="'warning'">
+              <fa-icon [icon]="faExclamationTriangle"></fa-icon>
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'danger'">
+              <fa-icon [icon]="faTimesCircle"></fa-icon>
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'info'">
+              <fa-icon [icon]="faInfoCircle"></fa-icon>
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'default'">
+              <fa-icon [icon]="faInfo"></fa-icon>
+            </ng-container>
+
+            <ng-container *ngSwitchDefault></ng-container>
+          </ng-container>
+        </span>
+      </div>
+      <div>
+        <strong>{{ msgConfig.title }}</strong>
+        <div class="w-100" *ngIf="msgConfig.description">
+          <p class="ngx-txt-wrap">
+            {{ msgConfig.description }}
+          </p>
+        </div>
+
+        <ng-container *ngIf="msgConfig.closeOption">
+          <button
+            type="button"
+            [ngClass]="{
+              'text-black':
+                msgConfig.alertType == 'default' ||
+                msgConfig.alertType == 'warning' ||
+                msgConfig.alertType == 'info'
+            }"
+            class="close text-white"
+            (click)="closeModal()"
+          >
+            <span>×</span>
+          </button>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</ng-container>

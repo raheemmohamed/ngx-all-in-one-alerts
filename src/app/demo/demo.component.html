@@ -1,0 +1,222 @@
+<div class="container">
+  <div class="col-md-4 col-sm-12 col-lg-4">
+    <h4 class="font-weight-bold">Alert message configuration</h4>
+    <hr />
+    <div class="w-100">
+      <form
+        [formGroup]="alertFormGroup"
+        (ngSubmit)="submitAlert(alertFormGroup.value)"
+      >
+        <div class="form-group">
+          <label for="msgTitle" class="font-weight-bold"
+            >Enter message title</label
+          >
+          <input id="msgTitle" formControlName="title" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="msgDescription" class="font-weight-bold"
+            >Enter message description</label
+          >
+          <textarea
+            id="msgDescription"
+            formControlName="description"
+            class="form-control"
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="font-weight-bold">Do you want close option</label><br />
+
+          <div class="radio">
+            <label
+              ><input
+                type="radio"
+                checked
+                formControlName="closeOption"
+                value="true"
+              />
+              Enable</label
+            >
+          </div>
+
+          <div class="radio">
+            <label
+              ><input
+                type="radio"
+                formControlName="closeOption"
+                value="false"
+              />
+              Disable</label
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="font-weight-bold"
+            >Do you want alert message with icon?</label
+          ><br />
+
+          <div class="radio">
+            <label
+              ><input
+                type="radio"
+                checked
+                formControlName="enableIcons"
+                value="true"
+              />
+              Enable</label
+            >
+          </div>
+
+          <div class="radio">
+            <label
+              ><input
+                type="radio"
+                formControlName="enableIcons"
+                value="false"
+              />
+              Disable</label
+            >
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="font-weight-bold">Message status</label><br />
+
+          <div class="radio">
+            <label
+              ><input
+                type="radio"
+                checked
+                formControlName="alertStatus"
+                value="default"
+              />
+              default</label
+            >
+          </div>
+
+          <div class="radio">
+            <label
+              ><input
+                type="radio"
+                formControlName="alertStatus"
+                value="success"
+              />
+              success</label
+            >
+          </div>
+
+          <div class="radio">
+            <label
+              ><input
+                type="radio"
+                formControlName="alertStatus"
+                value="warning"
+              />
+              warning</label
+            >
+          </div>
+
+          <div class="radio">
+            <label
+              ><input type="radio" formControlName="alertStatus" value="info" />
+              info</label
+            >
+          </div>
+
+          <div class="radio">
+            <label
+              ><input
+                type="radio"
+                formControlName="alertStatus"
+                value="danger"
+              />
+              danger</label
+            >
+          </div>
+        </div>
+
+        <!-- 
+        <div>
+          <button type="submit" class="btn btn-primary">update</button>
+        </div> -->
+      </form>
+    </div>
+  </div>
+
+  <div class="col-md-8 col-sm-12 col-lg-8 w-100">
+    <div class="w-100">
+      <div class="mb-2">
+        <h4 class="font-weight-bold">Alerts Demo</h4>
+        <hr />
+      </div>
+      <div class="mb-3">
+        <h5>Block level message</h5>
+
+        <div class="d-flex flex-wrap" *ngIf="!showMessage">
+          <button class="btn btn-dark" (click)="showBlockAlert()">
+            Show alert message
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <app-ngx-all-in-one-alerts
+          [showModal]="showMessage"
+          [msgConfig]="alertConfiguration"
+          (modalChangeStatus)="modalChangeStatus($event)"
+        ></app-ngx-all-in-one-alerts>
+      </div>
+
+      <div class="mb-2">
+        <h4 class="font-weight-bold">Setup</h4>
+        <hr />
+      </div>
+
+      <div class="font-weight-bold mb-1">HTML</div>
+
+      <textarea highlight-js [options]="{}" [lang]="'html'">
+<app-ngx-all-in-one-alerts 
+    [showModal]="showMessage" 
+    [msgConfig]="alertConfiguration"
+    (modalChangeStatus)="modalChangeStatus($event)"
+></app-ngx-all-in-one-alerts>
+</textarea
+      >
+
+      <div class="font-weight-bold mb-1">Typescript</div>
+
+      <textarea highlight-js [options]="{}" [lang]="'typescript'">
+export class DemoComponent implements OnInit{
+    alertConfiguration = {
+        title: "Your message title",
+        description: "Your message description",
+        closeOption: "default( 'true') if you dont required change to 'false'",
+        alertType: "default",
+        statusIcon: "default('false') if you required change to 'true'",
+    };
+
+    constructor(){}
+
+    ngOnInit(): void {}
+
+}
+</textarea
+      >
+
+      <div class="font-weight-bold mb-1">Model</div>
+
+      <textarea highlight-js [options]="{}" [lang]="'typescript'">
+export interface msgConfig {
+    title: string;
+    description: string;
+    closeOption: boolean;
+    alertType: string;
+    statusIcon: boolean;
+}
+
+    </textarea
+      >
+    </div>
+  </div>
+</div>
