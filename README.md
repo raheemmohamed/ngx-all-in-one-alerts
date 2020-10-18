@@ -1,6 +1,10 @@
-# LibraryApp
+# Ngx All in one alerts
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
+
+# Demo
+
+[click here](https://raheemmohamed.github.io/ngx-all-in-one-alerts/demo)
 
 ## Development server
 
